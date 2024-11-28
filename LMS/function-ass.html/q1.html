@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Write a function that checks whether a given string is a palindrome (a word, phrase, or
+        //  sequence that reads the same backward as forward).
+
+        function palindrome(ipString){
+            const reversString =ipString.split('').reverse().join('');
+
+            return reversString === ipString
+        }
+
+        str = "racecar";
+        console.log(palindrome(str));
+        str1 = "hii";
+        console.log(palindrome(str1));
+    </script>
+</body>
+</html>

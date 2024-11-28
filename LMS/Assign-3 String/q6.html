@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 6. Implement a logic that performs basic string compression using the counts of
+        // repeated characters. For example, the string "aabcccccaaa" would become
+        // "a2b1c5a3." If the compressed string is longer than the original, return the original.
+        
+        let str = 'aabcccccaaa'
+        let compressed = ''
+        let count = 1
+
+        for(let i=0;i<str.length;i++){
+            if(str[i] == str[i+1]){
+                count++
+            }
+            else{
+                compressed += str[i] + count
+                count = 1
+            }
+        }
+
+        let result = compressed.length > str.length ? str : compressed
+
+        document.write("original :" + str + '</br>')
+        document.write("compressed : " + compressed)
+    </script>
+</body>
+</html>

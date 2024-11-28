@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Task - 5: WAP to generate 10 digit alpha-numeric coupon
+        const char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const length = 10; 
+        let coupon = '';
+
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * char.length);
+            coupon += char[randomIndex];
+        }
+
+        console.log(`Random 10-digit alpha-numeric coupon: ${coupon}`);
+
+    </script>
+</body>
+</html>

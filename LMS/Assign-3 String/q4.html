@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 4. Create a program that converts a sentence into title case, where the rst letter of
+        // each word is capitalized, and the rest of the letters are in lowercase.
+        // For example, "the quick brown fox" should become "The Quick Brown Fox."
+
+        let sentence = "the quick brown fox"
+        let words = sentence.split(' ')   //string to array
+        let newSentence =''
+
+        for(let i=0;i<words.length;i++){
+            let word = words[i]
+
+            let titleCaseWord = word.charAt(0).toUpperCase()+word.slice(1).toLowerCase()
+
+            newSentence += titleCaseWord + ' '
+        }
+        document.write(newSentence)
+    </script>
+</body>
+</html>

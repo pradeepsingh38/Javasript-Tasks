@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 7. Create a program that checks if one string is a rotation of another. For instance,
+        // "waterbottle" is a rotation of "erbottlewat."
+
+        let str1 = 'waterbottle'
+        let str2 = 'erbottlewat'
+
+        if(str1.length === str2.length){
+            let cont = str1+str1
+
+            if(cont.includes(str1)){
+                document.write(`"${str1}" is a rotation of "${str2}."  `)
+            }
+            else{
+                document.write(`"${str1}" is a not rotation of "${str2}."  `)
+            }
+        }
+        else{
+                document.write(`"${str1}" is a not rotation of "${str2}."  `)
+            }
+    </script>
+</body>
+</html>

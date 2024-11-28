@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 10. Create a program that truncates a string to a specied length and adds "..." to the
+        // end if the string was truncated. For example, if the input is
+        // "Lorem ipsum dolor sit amet," and the maximum length is 10, the function should
+        // return "Lorem ipsu..."
+
+        let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+        let maxLength = 10;
+
+        if (str.length > maxLength) {
+            str = str.slice(0, maxLength) + "...";
+        }
+
+        document.write(str);
+
+    </script>
+</body>
+</html>

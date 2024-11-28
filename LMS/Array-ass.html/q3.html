@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3. Implement a program to remove duplicate values from an array.
+
+        let arr = [3,8,5,2,5,9];
+        let unqArr = [];
+
+        for(let i=0;i<arr.length;i++){
+            let isDup = false;
+            for(let j=0;j<unqArr.length;j++){
+                if(arr[i]==arr[j]){
+                    isDup=true;
+                    break;
+                }
+            }
+            if(!isDup){
+            unqArr.push(arr[i]); 
+            }           
+        }
+        console.log('original array is :' + arr);
+        console.log('unique array is: ' + unqArr)
+        
+    </script>
+</body>
+</html>

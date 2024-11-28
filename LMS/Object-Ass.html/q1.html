@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Task - 1 : Find the sum of people's budgets.
+
+        const people1 =[
+            { name: "John", age: 21, budget: 23000 },
+            { name: "Steve", age: 32, budget: 40000 },
+            { name: "Martin", age: 16, budget: 2700}
+        ]
+
+        let sumBudget =0;
+
+        for(let i=0;i<people1.length;i++){
+            sumBudget += people1[i].budget;
+        }
+        console.log('sum of budget people1 : ' + sumBudget);
+        
+        const people12 =[
+            { name: "John", age: 21, budget: 29000 },
+            { name: "Steve", age: 32, budget: 32000 },
+            { name: "Martin", age: 16, budget: 1600 }
+        ]
+        let sumBudg =0;
+
+        for(let i=0;i<people12.length;i++){
+            sumBudg += people12[i].budget;
+        }
+        console.log('sum of budget people12 : '+ sumBudg); 
+
+    </script>
+</body>
+</html>

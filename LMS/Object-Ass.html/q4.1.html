@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (i) const person1 = { name: 'Alex', address: '15th Park Avenue', age: 43 }
+        // ➢ Add new property to person1 object
+        // ➢ salary=123455
+        
+        const person1 = { name: 'Alex', address: '15th Park Avenue', age: 43 }
+        person1.salary = 123455;
+
+        console.log(person1);
+        console.log(`Alex has age ${person1.age} and he has salary ${person1.salary}`);
+
+        // (ii) Complete the below problem
+        // ➢ Set salary of person1 to salary of person2
+        const person2 = { name: 'Bob', address: 'Canada', age: 53 };
+        person2.salary = person1.salary;
+        console.log(person2);           
+    </script>
+</body>
+</html>

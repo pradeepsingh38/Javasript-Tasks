@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #detailsTable{
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            text-align: left;
+        }
+        th,td{
+            border: 1px solid green;
+
+        }
+    </style>
+</head>
+<body>
+    <table id="detailsTable">
+        <thead>
+            <tr> 
+            <th>id</th>
+            <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <script>
+        const details =[
+            {id:1, name:"praveen"},
+            {id:2, name:"ram"},
+            {id:3, name:"shyam"},
+            {id:4, name:"hitesh"},
+            {id:5, name:"gaj"},
+        ]
+
+        const tableBody = document.querySelector("#detailsTable tbody");
+        let rows = "";
+
+        for(let i=0;i<details.length;i++){
+            rows += ` 
+                <tr>
+                    <td>${details[i].id}</td>
+                    <td>${details[i].name}</td>
+                </tr> 
+                `;
+        }
+        tableBody.innerHTML = rows;
+
+        
+
+    </script>
+</body>
+</html>

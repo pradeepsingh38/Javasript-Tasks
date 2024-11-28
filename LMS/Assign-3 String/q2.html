@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2. Create a program that checks if a given string is a palindrome. A palindrome is a
+        // word, phrase, or sequence of characters that reads the same forwards and
+        // backward (ignoring spaces, punctuation, and capitalization).
+
+        let str = 'malayalam';
+        let normStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+        let revstr = '';
+
+        for(i=normStr.length-1;i>=0;i--){
+            revstr += normStr[i];                
+        }
+        document.write(revstr + '</br>')
+        document.write(normStr + '</br>') 
+ 
+        if(revstr == normStr){
+            document.write("given String is Palindrome")
+        }
+        else{
+            document.write("given String is not Palindrome")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Task - 2 : Display book name according to the name author & reading status
+
+        var library = [
+            { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
+            { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true },
+            { author: 'Suzanne Collins', title: 'The Hunger Games', readingStatus: false}
+        ];
+
+        for(let i=0;i<library.length;i++){
+            let book = library[i];
+            if(book.readingStatus){
+                console.log(`Already read ${book.title} by ${book.author} `);              
+            }
+            else{
+                console.log(`you still not to read ${book.title} by ${book.author} `);              
+
+            }
+        }
+
+    </script>
+</body>
+</html>

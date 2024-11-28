@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+    }
+    .flexitems{
+        flex :1;
+    }
+    .box{
+        border: 2px solid green;
+        padding: 5px;
+
+    }
+</style>
+<body>
+
+    <script>
+        const students = ["peter" , "elon" ,"david" ,"jasmine"];
+        let childEle = "";
+
+        for(let i=0; i< students.length; i++){
+            childEle += `<div class="flexitems box">${students[i]}</div>`;
+        }
+        const parentEle = `<section class="container box">${childEle}</section>`
+        console.log(parentEle);
+
+        document.getElementsByTagName("body")[0].innerHTML=parentEle
+    </script>
+</body>
+</html>
