@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+    }
+    .flexItems{
+        flex :1;
+    }
+    .box{
+        border: 2px solid green;
+        padding: 5px;
+
+    }
+</style>
+<body>
+    <script>
+        const parEle = document.createElement("section");
+
+        const div1 = document.createElement("div");
+        const div2 = div1.cloneNode();
+        const div3 = div1.cloneNode();
+        const div4 = div1.cloneNode();
+
+        const arr = [div1,div2,div3,div4]
+        //parEle.appendChild(div1);
+        for(let i=0;i<arr.length;i++){
+            parEle.appendChild(arr[i]);
+        }
+
+        const txt1 = document.createTextNode("prter")
+        const txt2 = document.createTextNode("prter")
+        const txt3 = document.createTextNode("prter")
+        const txt4 = document.createTextNode("prter")
+
+        // const txt = [txt1,txt2,txt3,txt4]
+        // for(let j=0;i<txt.length;j++){
+
+        // }
+        div1.appendChild(txt1)
+        div2.appendChild(txt2)
+        div3.appendChild(txt3)
+        div4.appendChild(txt4)
+
+
+
+        console.log(parEle);
+
+
+        const body = document.querySelector("body")
+        body.appendChild(parEle)
+
+        //set attribute
+        parEle.setAttribute("class" , "container box")
+        div1.setAttribute("class","flexItems box")
+        div2.setAttribute("class","flexItems box")
+        div3.setAttribute("class","flexItems box")
+        div4.setAttribute("class","flexItems box")
+
+
+        
+
+
+    </script>
+</body>
+</html>
