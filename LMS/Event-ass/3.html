@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        align-self: center;
+        height: 30px;
+        width: 100px;
+    }
+    .spn{
+        margin: 10px;
+        border: 1px solid black;
+        padding: 5px 25px;
+        color:  aquamarine;
+    }
+</style>
+<body>
+    <script>
+        //Create a button that counts the number of times it has been clicked. Display the
+        // counter in a <span> element.
+        const btn = document.createElement("button")
+        const txt = document.createTextNode("count")
+        btn.appendChild(txt)
+
+        btn.setAttribute("class" , "box")
+        document.body.appendChild(btn)
+
+        const Counter = document.createElement("span")
+        Counter.setAttribute("class","spn")
+        Counter.textContent ="0"
+        document.body.appendChild(Counter)
+        
+        let count = 0;
+        btn.addEventListener("click",(evnt)=>{
+            count++;
+            Counter.textContent = count;
+        })
+
+    </script>
+</body>
+</html>
