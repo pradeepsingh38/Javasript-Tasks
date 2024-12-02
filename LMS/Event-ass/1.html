@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 1.) Difference between Event bubbling and Event capturing? Write an example. -->
+
+<!-- Event Bubbling: Think of bubbles rising from the bottom of a glass of water—event starts at the target and goes up to the top.
+ 
+Event Capturing: Think of water trickling down from the top of a waterfall—event starts at the top and goes down to the target. -->
+<style>
+    body{
+        height: 500px;
+    }
+    .container{
+        border: 1px solid black;
+        text-align: center;
+        padding: 40px;
+    }
+    .heading{
+        border: 1px solid black;
+        padding: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 class="heading">bubling and capturing</h1>
+    </div>
+
+    <script>
+        const bdy = document.querySelector("body")
+        bdy.addEventListener("click",()=>{
+            alert("body was clicked");
+            
+        })
+        const dv = document.querySelector(".container")
+        dv.addEventListener("click",()=>{
+            alert("div was clicked");
+            
+        })
+        const hd = document.querySelector(".heading")
+        hd.addEventListener("click",()=>{
+            alert("heading was clicked");
+            
+        })
+
+         // Capturing Phase
+         bdy.addEventListener("click", () => {
+            alert("Body clicked (Capturing)");
+        }, true);
+
+        dv.addEventListener("click", () => {
+            alert("Container clicked (Capturing)");
+        }, true);
+
+        hd.addEventListener("click", () => {
+            alert("Heading clicked (Capturing)");
+        }, true);
+    </script>
+</body>
+</html>
