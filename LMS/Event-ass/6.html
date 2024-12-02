@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 6.) Change the background color of a <div> when it's double-clicked. -->
+<style>
+    .container{
+        border: 1px solid black;
+        height: 100px;
+        width: 900px;
+        text-align: center;
+        margin: 40px;
+    }
+    .dbclick{
+        background-color: blue;
+    }
+</style>    
+<body>
+    <div class="container">
+        <h2>click for changing background color</h2>
+    </div>
+    <script>
+        const div = document.querySelector(".container");
+        div.addEventListener("dblclick",(evnt)=>{
+            evnt.target.classList.toggle("dbclick")
+
+        })
+
+    </script>
+</body>
+</html>

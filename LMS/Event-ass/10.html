@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 10.) When the user types in an input field, automatically convert the text to uppercase. -->
+<body>
+    <form action="">
+        <input type="text" id="input">
+    </form>
+    <script>
+        const ipField = document.getElementById("input")
+
+        ipField.addEventListener("input",()=>{
+            ipField.value= ipField.value.toUpperCase();
+        })
+    </script>
+</body>
+</html>

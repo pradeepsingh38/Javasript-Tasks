@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover to Show Text</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            width: 700px;
+            height: 200px;
+            text-align: center;
+            position: relative;
+            font-size: 18px;
+        }
+        .hidden-text {
+            position: absolute;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Hover over this container
+        <span class="hidden-text">hidden text</span>
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+        const hiddenText = document.querySelector(".hidden-text");
+
+        container.addEventListener("mouseover", () => {
+            hiddenText.style.display = "block";
+        });
+
+        container.addEventListener("mouseout", () => {
+            hiddenText.style.display = "";
+        });
+    </script>
+</body>
+</html>

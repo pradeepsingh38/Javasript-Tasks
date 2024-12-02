@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 9.) When the user clicks on a <div>, change the text inside it. -->
+    <style>
+        #container{
+            border: 1px solid black;
+            height: 150px;
+            width: 500px;
+            text-align: center;
+        }
+    </style>
+<body>
+    <div id="container">
+        <p>click here</p>
+    </div>
+    <script>
+        const div = document.getElementById("container")
+
+        div.addEventListener("click",()=>{
+            div.innerHTML="<p>this is changed</p>"
+        })
+    </script>
+</body>
+</html>
