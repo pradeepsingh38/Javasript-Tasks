@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<!-- 4.) Detect and display the key that the user presses on the keyboard. -->
 <body>
     <form action="">
         <input type="text" placeholder="enter here ">
     </form>
     <p>key pressed <span id="keyDisplay">none</span> </p>
     <script>
-        // 4.) Detect and display the key that the user presses on the keyboard.
         const inputField  = document.querySelector("input")
         const keyDispaly= document.getElementById("keyDisplay")
 
@@ -19,6 +19,9 @@
             keyDispaly.textContent = evnt.key
         });
         
+        document.addEventListener("keyup",(evn)=>{
+            console.log(evn.key);
+        })
     </script>
 </body>
 </html>

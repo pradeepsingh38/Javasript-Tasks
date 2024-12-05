@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <!-- 5.) Track and display the mouse's current X and Y coordinates as the user moves the
-    mouse over a <div>. -->
+<!-- 5.) Track and display the mouse's current X and Y coordinates as the user moves the
+mouse over a <div>. -->
 <style>
     #tracker{
         border: 1px solid black;
@@ -28,8 +28,8 @@
         const coordinatesDis= document.getElementById("coordinates")
 
         tracDiv.addEventListener("mousemove",(evnt)=>{
-            const x = evnt.offsetX;
-            const y=evnt.offsetY;
+            const x = evnt.clientX;
+            const y=evnt.clientY;
 
             coordinatesDis.textContent = `x: ${x} , y:${y}`;
         })
@@ -37,9 +37,6 @@
         tracDiv.addEventListener("mouseout", (evnt)=>{
             coordinatesDis.textContent = `x:=0 , y:0`;
         })
-
-        
-
     </script>
 </body>
 </html>
