@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 13.) Create a button that, when the button is clicked, Add a new list item to an
+unordered list. -->
+<body>
+    
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <button id="addItemButton">Add Item</button>
+
+    <script>
+        const button = document.getElementById("addItemButton");
+        const itemList = document.getElementById("itemList");
+
+        button.addEventListener("click",()=>{
+        const newItem = document.createElement("li")
+        newItem.textContent = `Item ${itemList.children.length+1}`
+        itemList.appendChild(newItem)
+        })
+    </script>
+</body>
+</html>

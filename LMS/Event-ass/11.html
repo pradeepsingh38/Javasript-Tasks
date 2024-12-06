@@ -7,8 +7,27 @@
 </head>
 <!-- 11.) Change an image to another when the user hovers over it and revert to the original
 image when the user stops hovering -->
+<style>
+    img{
+        width: 550px;
+        height: 400px;
+    }
+</style>
 <body>
+    <img id="orgImg" src="./imgfirst.jpg" alt="orgImg">
     <script>
+        const img = document.getElementById("orgImg") 
+        const orgSrc = "./imgfirst.jpg"
+        const hoverSrc = "./secondimg.jpg"
+
+        img.addEventListener("mouseover",()=>{
+            img.src= hoverSrc
+        })
+
+        img.addEventListener("mouseout",()=>{
+            img.src =orgSrc;
+
+        })
 
     </script>
 </body>

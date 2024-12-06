@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<!-- 11.) Change an image to another when the user hovers over it and revert to the original
-image when the user stops hovering -->
+<!-- 12.) Change the background color of the page when the user scrolls past a certain
+point. -->
+<style>
+    img{
+        width: 450px;
+        height: 400px;
+        cursor: pointer;
+    }
+</style>
 <body>
-    <img src="" alt="">
+    <img id="orgImg" src="./imgfirst.jpg" alt="originalImg">
     <script>
+        const img = document.getElementById("orgImg")
 
+        const orgSrc = "./imgfirst.jpg"
+        const hoverSrc = "./secondimg.jpg"
+
+        img.addEventListener("mouseover",()=>{
+            img.src = orgSrc;
+        })
+
+        img.addEventListener("mouseout",()=>{
+            img.src = hoverSrc;
+        })
     </script>
 </body>
 </html>

@@ -31,7 +31,7 @@
 // btn.addEventListener("click", (evnt)=>{
 //     console.log("heloo");
 //     console.log(evnt);
-//     console.log(evnt.target());
+//     console.log(evnt.target);
     
 // })
 
@@ -56,7 +56,7 @@
 
 //event deligation
 
-//const listItems= document.querySelectorAll("ul li");
+// const listItems= document.querySelectorAll("ul li");
 // for(let i=0;i<listItems.length;i++){
 //     listItems[i].addEventListener("click",(evnt)=>{
 //         evnt.target.classList.toggle("highlight")
@@ -66,5 +66,7 @@
 const ulEle= document.querySelector("ul");
 
 ulEle.addEventListener("click",(evnt)=>{
-    evnt.target.closest("li").classList.toggle("highlight")
+    //evnt.target.closest("li").classList.toggle("highlight")
+    evnt.target.classList.toggle("highlight")
+
     })

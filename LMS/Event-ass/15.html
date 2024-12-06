@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Capture and log every single click made anywhere on the page, including clicks
+on the document, buttons, links, etc. -->
+<body>
+    <h1>Click Anywhere</h1>
+    <button>click</button>
+    <a href="https://www.oracle.com/">oracle</a>
+    <p>hello bengaluru</p>
+
+    <script>
+        document.addEventListener("click", (event) => {
+            document.write(`Clicked Element: ${event.target.tagName}`);
+            document.write(`Coordinates: X=${event.clientX}, Y=${event.clientY}`);
+        });
+    </script>
+    
+</body>
+</html>
