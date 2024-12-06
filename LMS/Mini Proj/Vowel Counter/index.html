@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Counter</title>
+
+    <style>
+        h2{
+            text-align: center;
+        }
+
+        #txtar {
+            width: 180px;
+            height: 200px;
+            margin: 10px 0;
+            margin-left: 590px;
+        }
+        .btn{
+            margin-left: 590px;
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Vowel Counter</h2>
+    <textarea name="" id="txtar"></textarea> <br>
+    <p id="result">vowels count : 0</p>
+    <div class="btn">
+        <button id="check">check Vowel</button>
+        <button id="reset">reset</button>
+    </div>
+    
+
+    <script>
+        txtarea = document.querySelector("textarea")
+        checkBtn = document.querySelector("#check")
+        resetBtn = document.querySelector("#reset")
+
+        checkBtn.addEventListener("click",handleCheck)
+
+        function handleCheck(){
+            const txt = txtarea.value.toLowerCase();
+            const vowels = ['a','e','i','o','u']
+            let count = 0;
+            for (let i = 0; i < txt.length; i++) {
+                const char = txt[i]
+                if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+                count++;
+                }
+            }
+
+            document.getElementById('result').textContent = `Vowel Count: ${count}`;
+
+        }
+
+        resetBtn.addEventListener("click",handleReset)
+
+        function handleReset(){
+            document.getElementById('txtar').value = '';
+            document.getElementById('result').textContent = 'Vowel Count: 0';
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
