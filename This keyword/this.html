@@ -6,6 +6,18 @@
     <title>This i</title>
 </head>
 <body>
-    
+    <script>
+        const apple ={
+        brand : "16pro",
+        info:function() {
+            //this keyword target to owner object
+            console.log(`${this.brand}  newly launched `); 
+        }
+
+    }
+
+    apple.info()
+
+    </script>
 </body>
 </html>
