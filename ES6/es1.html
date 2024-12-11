@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //-----------array destructring
+        // const counry = ["usa" , "china" , "bharat" , "syria"];
+
+        // const [a,,c] = counry
+        // console.log(a,c);
+
+        // //nested arr with ignore 
+        // const [ ,[ ,[ , x]]] = ["india",["bharat",["uk","USA"]],"paxtan"];
+        // console.log(x);
+
+
+    //---------------obj destructing
+        const person = {
+            name: 32,
+            father: "indra singh",
+            hobies : ["travelling","gaming"]
+        }
+
+        const {name,father} = person;
+        console.log(father);
+
+        //nested obj
+
+        const x = {
+            a:1,
+            b:{
+                c:{
+                    d:2,
+                    e:3
+                }
+            }
+        }
+
+        const {a,b:{c:{d,e}}} =x;
+        //ony access a d e inside var bcz b,c are renaming like working
+        console.log(a,d,e);
+
+
+    //----------spread operator-------
+        const fruit = ["app","mango","grapes"]
+        
+        const vegs = [...fruit,"carrot","onion","podina"]
+
+        console.log(vegs);
+        
+        
+
+        
+        
+        
+
+        
+
+        
+    </script>
+</body>
+</html>
