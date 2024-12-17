@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Image slider</title>
+</head>
+<style>
+    button{
+        width: 198px;
+        height: 30px;
+        background-color: blueviolet;
+        border: none;
+    }
+</style>
+<body>
+    <figure>
+        <img src="./first.jpg" 
+        alt="" width="400px" height="300px">
+
+        <figcaption>
+            <button id="prev">Prev</button>
+            <button id="next">next</button>
+        </figcaption>
+    </figure>
+
+    <script>
+        const img = document.querySelector("img")
+        const btnNext = document.querySelector("#next")
+        const btnPrev = document.querySelector("#prev")
+
+        const images = ["./first.jpg","./sec.jpg","./third.jpg"]
+        let ind = 0;
+
+        const upImg=()=>{
+            img.src = images[ind];
+        }
+
+
+        btnNext.addEventListener("click",()=>{
+            ind = (ind+1)%images.length;
+            upImg();
+        })
+        btnPrev.addEventListener("click",()=>{
+            ind = (ind+1)%images.length;
+            upImg();
+        })
+
+        const slideInterval = setInterval(()=>{
+            ind = (ind+1)%images.length;
+            upImg();
+        }, 1000);
+    </script>
+    
+</body>
+</html>

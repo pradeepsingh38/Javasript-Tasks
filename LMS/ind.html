@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<body>
+    <figure>
+        <img id="slider" src="./first.jpg" alt="Image Slider" width="400px" height="300px">
+        <figcaption>
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </figcaption>
+    </figure>
+
+    <script>
+        const images = ["./first.jpg", "./sec.jpg", "./third.jpg"]; // Array of image sources
+        let currentIndex = 0; // Current index of the displayed image
+
+        const imgSlider = document.querySelector("#slider");
+        const btnNext = document.querySelector("#next");
+        const btnPrev = document.querySelector("#prev");
+
+        // Function to update the image source
+        const updateImage = () => {
+            imgSlider.src = images[currentIndex];
+        };
+
+        // Event listener for the "Next" button
+        btnNext.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length; // Increment index and loop back to the start
+            updateImage();
+        });
+
+        // Event listener for the "Prev" button
+        btnPrev.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Decrement index and loop back to the end
+            updateImage();
+        });
+
+        // Auto-slide functionality
+        const autoSlide = () => {
+            currentIndex = (currentIndex + 1) % images.length; // Increment index and loop back to the start
+            updateImage();
+        };
+
+        // Start auto-slide every 3 seconds (3000ms)
+        const slideInterval = setInterval(autoSlide, 2000);
+
+        // Optional: Pause auto-slide when buttons are clicked
+        // btnNext.addEventListener("click", () => {
+        //     clearInterval(slideInterval); // Stop auto-slide
+        // });
+        // btnPrev.addEventListener("click", () => {
+        //     clearInterval(slideInterval); // Stop auto-slide
+        // });
+    </script>
+</body>
+</html>
