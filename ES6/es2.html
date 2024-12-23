@@ -8,7 +8,91 @@
 <body>
     <script>
         //ternary operator
+        //syntax
+        // const y =3
+        // const x = y>5 ? true :false
+        // console.log("it is" + x);
+
+
+        //OR opretor-----------------its target truthy value
+
+        //console.log(23 || undefined);
+
+        //AND opretor-----------------its target FLASY value
+
+        // const car={
+        //     make : "BMW",
+        //     kms :0
+        // }
+
+        // const dist = car.kms && 20
+        // console.log(dist);
+
+
+
+        //3) nullish opr---------------- work only null and undefined falsy
+        // const car={
+        //     make : "BMW",
+        //     kms :0
+        // }
+
+        // const dist = car.kms ?? 20
+        // console.log(dist);
+
+
+
+        //4) optional chainning-----------
+
+        // const car = {type:"Fiat", model:"500", color:"white"};
+        // let names = car?.name;
+        // console.log(names);
+
+        //ex-2--------
+        const retaurant ={
+            name : "starbucks",
+            openingHours :{
+                thu :{
+                    open:10,
+                    close:12
+                },
+                sat :{
+                    open:12,
+                    close:9
+                },
+                sun:{
+                    open:"0",
+                    close:"0"
+                }
+            }
+        }
+        console.log(retaurant.openingHours?.mon?.open);
+
+        const days = ['mon','tue','wed','thu','fri','sat','sun'];
+
+        for(let i=0;i<days.length ; i++){
+
+            const start = retaurant.openingHours[days[i]]?.open ?? "closed"
+
+            if(retaurant.openingHours[days[i]]?.open){
+                console.log(`${retaurant.name} on ${days[i]} , we are open at ${start}`)              
+            }
+            else{
+                console.log(`${retaurant.name} on ${days[i]} , we are  ${start}`)              
+            }
+        }
         
+        
+
+
+
+
+
+        
+
+        
+        
+        
+
     </script>
     
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class StudentCls{
+      fullName; // Public
+      ID; // Public
+      #marks; // Private
+      #greet() { // Private method
+    console.log(`Hello, ${this.fullName}!`);
+  }
+      constructor(name, id, mark){
+        this.fullName = name
+        this.ID = id
+        this.#marks = mark
+      }
+      get getMarks(){
+        return this.#marks
+      }
+      greet() { // Public method for calling private #greet()
+    this.#greet(); // Call the private method from within the class
+  }
+    }
+
+    const pradeep = new StudentCls("Pradeep", 101, 75)
+    // pradeep.#marks = 100
+    console.log(pradeep.getMarks);
+    </script>
+</body>
+</html>
