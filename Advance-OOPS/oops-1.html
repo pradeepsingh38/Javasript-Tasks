@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //*****constructor func****************************8
+
+        const person = function (name ,year) {
+            this.fullNmae = name
+            this.birthYear = year            
+        }
+
+        //----add protype inside class
+        person.prototype.calcAge = function(){
+            console.log(2024-this.birthYear);
+            // const age = 2024-this.birthYear;      ///////////?????????????????????? call name aand year
+        }
+
+
+        const peter = new person("peter",1998); //instanciation , obj
+        peter.calcAge()
+        console.log(peter);
+        //console.log();
+        
+        
+    </script>
+</body>
+</html>
