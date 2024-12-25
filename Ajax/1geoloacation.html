@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="track">Track coordinates</button>
+    <script>
+        const trackBtn = document.getElementById("track");
+
+        trackBtn.addEventListener("click",handleTrack);
+        function handleTrack(){
+            navigator.geolocation.getCurrentPosition(
+                (posData)=>{
+                    console.log(posData);                   
+                },
+                (reject)=>{
+                    console.log(reject);
+                }
+            )
+        }
+
+    </script>
+</body>
+</html>
