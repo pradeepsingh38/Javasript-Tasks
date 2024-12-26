@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.) Create a ShoppingCart class to manage items. Each item should be an instance of
+        // an Item class.
+        // Tasks:
+        // ➢ Add methods to add, remove, and calculate the total cost of items.
+        // ➢ Include discounts as a feature and ensure encapsulation of cart data
+
+        class Item{
+            constructor(name,price,qty){
+                this.name = name
+                this.price=price
+                this.qty=qty
+            }
+        }
+
+        const oreo = new Item("oreo-choco",10,5)
+
+        class ShoppingCart{
+            constructor(){
+                this.items =[]
+            }
+            add(obj){     // add in protype properties
+                this.items.push(obj)
+            }
+            remove(itemName){
+                //this.item.filter(item => itemName)
+                //this.item = this.item.filter(itm => item.name !== itemName);
+                this.items = this.items.filter(item => item.name !== itemName);
+
+
+            }
+        }
+        const shop = new ShoppingCart()
+
+        //for item first
+        //add item
+        shop.add(oreo);
+        console.log(shop.items[0]);
+
+        // Remove item
+        shop.remove("oreo-choco");
+        console.log("Cart after removing item:", shop.items);
+        
+        
+
+        
+        
+
+
+    </script>
+</body>
+</html>

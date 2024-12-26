@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //*****************es6- getters -setters******88
+        const apple={
+            brand:"apple",
+            model:"ipohone 15",
+            features:["front cam","rear cam","120px","222px"],
+            //get
+            get printInfo(){
+                return this.features[0];
+            }  ,// not forgot  , this sign 
+
+            //set
+            set changeModelHandler(changeModel){
+                this.model =changeModel
+            }
+        }
+        apple.changeModelHandler= "iphone 16";
+
+        console.log(apple.printInfo);
+        console.log(apple.changeModelHandler= "iphone 16");       
+        console.log(apple);
+
+
+
+        //----using class and  constructor
+        class  Square{
+            constructor(width){
+                this.width = width
+                this.height = width
+            }
+
+            get printArea(){
+                return this.width*this.height
+            }
+
+            set newWidthHandler(newWidth){
+                this.width = newWidth
+                this.height = this.width
+            }
+        }
+
+        const sqr = new Square(4);
+        sqr.newWidthHandler=15
+        console.log(sqr.printArea);
+        
+
+        
+        
+    </script>
+</body>
+</html>
