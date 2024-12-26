@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class person{
+            constructor(name,year){
+                this.fullName = name;
+                this.birthYear = year;
+            }
+            calcAge(years){
+                //console.log(years-year.birthYear);
+                this.calAg = years-this.birthYear;
+            }
+        }
+
+        const peter = new person("peter",2002);
+        console.log(peter);
+        console.log(peter.fullName);
+        
+        //peter.calAge();
+        peter.calcAge(2024);
+        console.log(peter.calAg);
+
+
+        
+
+    </script>
+</body>
+</html>
