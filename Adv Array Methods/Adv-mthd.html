@@ -71,6 +71,14 @@
         // console.log(res2);
 
         // ----- duplicate values
+        const num5 = [2,2,4,6,5,6];
+
+        const res3=num5.reduce((acc,ele)=>{
+            if(!acc.includes(ele)){
+                acc.push(ele);
+            }
+            return acc;
+        }) 
 
         
         
