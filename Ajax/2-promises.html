@@ -55,6 +55,18 @@
 
         const trackBtn = document.getElementById("track");
 
+        const timer = (duration)=>{
+            const timerPromise = new Promise( (resolve, reject)=>{
+                setTimeout( ()=>{
+                    resolve("done timer !");
+                },duration)
+            })
+            return timerPromise
+        }
+
+        
+
+
         trackBtn.addEventListener("click",handleTrack);
         function handleTrack(){
             navigator.geolocation.getCurrentPosition(
@@ -67,6 +79,11 @@
                     console.log(reject);
                 }                
             )
+
+            timer(0).then( (data)=>{
+                console.log(data);
+            })
+            
             console.log("gettting pos.");
             
         }
