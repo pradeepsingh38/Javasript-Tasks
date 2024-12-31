@@ -29,24 +29,47 @@
 
 
         //promise------
-        const promises = new Promise( (resolve,reject)=>{
-            let randumNum =  Math.floor(1000 * Math.random());
-            console.log(randumNum);
+        // const promises = new Promise( (resolve,reject)=>{
+        //     let randumNum =  Math.floor(1000 * Math.random());
+        //     console.log(randumNum);
             
-            if (randumNum>1000){
-                resolve("you won the rupees !")
-            }
-            else{
-                reject("you lost !!")
-            }
-        })
+        //     if (randumNum>1000){
+        //         resolve("you won the rupees !")
+        //     }
+        //     else{
+        //         reject("you lost !!")
+        //     }
+        // })
 
-        promises.then( (data)=>{
-            console.log("you won");
-        }).catch( (denied)=>{
-            console.log(denied);
+        // promises.then( (data)=>{
+        //     console.log("you won");
+        // }).catch( (denied)=>{
+        //     console.log(denied);
             
-        });
+        // });
+
+
+
+
+        //-------promise in geolocation timer 
+
+        const trackBtn = document.getElementById("track");
+
+        trackBtn.addEventListener("click",handleTrack);
+        function handleTrack(){
+            navigator.geolocation.getCurrentPosition(
+                (posData)=>{
+                    setTimeout(()=>{
+                        console.log(posData);                   
+                    },2000)
+                },
+                (reject)=>{
+                    console.log(reject);
+                }                
+            )
+            console.log("gettting pos.");
+            
+        }
 
     </script>
 </body>
