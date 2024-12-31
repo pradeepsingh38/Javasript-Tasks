@@ -71,13 +71,13 @@
         function handleTrack(){
             navigator.geolocation.getCurrentPosition(
                 (posData)=>{
-                    setTimeout(()=>{
-                        console.log(posData);                   
-                    },2000)
+                    timer(2000).then( (tmData)=>{
+                        console.log(posData);
+                    })
                 },
                 (reject)=>{
                     console.log(reject);
-                }                
+                }
             )
 
             timer(0).then( (data)=>{
