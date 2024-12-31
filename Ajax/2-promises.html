@@ -8,29 +8,31 @@
 <body>
     <button id="track">Track me</button>
     <script>
-        const trackBtn = document.getElementById("track");
+        // const trackBtn = document.getElementById("track");
 
-        trackBtn.addEventListener("click",handleTrack);
-        function handleTrack(){
-            navigator.geolocation.getCurrentPosition(
-                (posData)=>{
-                    setTimeout(()=>{
-                        console.log(posData);                   
-                    },2000)
-                },
-                (reject)=>{
-                    console.log(reject);
-                }                
-            )
-            console.log("gettting pos.");
+        // trackBtn.addEventListener("click",handleTrack);
+        // function handleTrack(){
+        //     navigator.geolocation.getCurrentPosition(
+        //         (posData)=>{
+        //             setTimeout(()=>{
+        //                 console.log(posData);                   
+        //             },2000)
+        //         },
+        //         (reject)=>{
+        //             console.log(reject);
+        //         }                
+        //     )
+        //     console.log("gettting pos.");
             
-        }
+        // }
 
 
 
         //promise------
         const promises = new Promise( (resolve,reject)=>{
-            let randumNum = 1000*Math.random();
+            let randumNum =  Math.floor(1000 * Math.random());
+            console.log(randumNum);
+            
             if (randumNum>1000){
                 resolve("you won the rupees !")
             }
@@ -38,6 +40,13 @@
                 reject("you lost !!")
             }
         })
+
+        promises.then( (data)=>{
+            console.log("you won");
+        }).catch( (denied)=>{
+            console.log(denied);
+            
+        });
 
     </script>
 </body>
