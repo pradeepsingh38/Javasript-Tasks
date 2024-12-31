@@ -7,6 +7,62 @@
 </head>
 <body>
     <script>
+        //------some----   itrs work on any one true so its give true 
+        // const num1= [1,2,3,5,6,7,4,3];
+
+        // const someRes = num1.some(item => item>1)
+        // console.log(someRes);
+
+        //----every ----- check for every elements is true then result is true 
+
+        // const everyRes = num1.every(mov => mov >3)
+        // console.log(everyRes);
+
+        //---------flat
+        //its removing the nested arrray---
+
+        // const num2 = [[2,3,4],4,5,[3,9,8]];
+        // const flatRes = num2.flat();  //its take no argument (call back fn)
+
+        // console.log(flatRes);
+        
+        //2 nested arr inside one nestArr
+
+        // const nestArr = [ [2,3,4], 4, 5, [3,[2,8,6,7,],8] ];
+
+        // const flatResult = nestArr.flat(2); // 2 is no of nestArr
+        // console.log(flatResult);
+        
+
+        ///-----do without using flat method
+        //recursive func-----
+
+        const flatedArr =[];
+        const nestArray = [ [2,3,4], 4, 5, [3,[2,8,6,7,9],8] ];
+
+        function recur(arr){
+            arr.forEach(element => {
+                if(Array.isArray(element)){
+                    recur(element)
+                }
+                else{
+                    flatedArr.push(element)
+                }
+            });
+
+        }
+        recur(nestArray);
+        console.log(flatedArr);
+        
+
+
+
+
+
+
+
+        
+        
         
     </script>
 </body>
