@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="track">Track me</button>
+
+    <script>
+        const trackBtn = document.getElementById("track");
+
+
+        const timer = (duration)=>{
+            const timerPromise = new Promise( (resolve, reject)=>{
+                setTimeout( ()=>{
+                    resolve("done timer !");
+                },duration)
+            })
+            return timerPromise
+        }
+        const getPosition = ()=>{
+            return new Promise( (sucess,denied)=>{
+                navigator.geolocation.getCurrentPosition((posData)=>{
+                    sucess(posData);
+                }),
+                (rejected=>{
+                    rejected(denied);
+                })
+
+            })
+        }
+        async function handleTrack(){
+            let geolocation;
+            let time;
+            try{
+                geolocation= await getPosition()
+                time = await timer(2000)
+
+            }catch(err){
+                console.log(err);
+            }
+
+            console.log(geolocation,time);
+            console.log("getting pos....");
+        }
+        trackBtn.addEventListener("click",handleTrack);
+    </script>
+</body>
+</html>

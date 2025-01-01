@@ -65,21 +65,41 @@
             })
             return timerPromise
         }
+        const getPosition = ()=>{
+            return new Promise( (sucess,denied)=>{
+                navigator.geolocation.getCurrentPosition((posData)=>{
+                    sucess(posData);
+                }),
+                (rejected=>{
+                    rejected(denied);
+                })
+
+            })
+        }
 
         
 
 
         function handleTrack(){
-            navigator.geolocation.getCurrentPosition(
-                (posData)=>{
-                    timer(2000).then( (tmData)=>{
-                        console.log(posData);
-                    })
-                },
-                (reject)=>{
-                    console.log(reject);
-                }
-            )
+            // navigator.geolocation.getCurrentPosition(
+            //     (posData)=>{
+            //         timer(2000).then( (tmData)=>{
+            //             console.log(posData);
+            //         })
+            //     },
+            //     (reject)=>{
+            //         console.log(reject);
+            //     }
+            // )
+
+            let getPostData;
+            getPosition().then( (suceesData)=>{  //position promise handle
+                getPostData=suceesData;
+                return timer(2000)
+            }).then(()=>{ // timer promise handle
+                console.log(getPostData);
+            }).catch();
+
 
             timer(0).then( (data)=>{
                 console.log(data);
